@@ -12,6 +12,9 @@ bin/assume-role-Darwin: *.go
 bin/assume-role-Windows.exe: *.go
 	env GOOS=windows go build -o $@ .
 
+ln:
+	cp -r $(PWD)/bin/assume-role $(HOME)/.local/bin/assume-role
+
 clean:
 	rm -rf bin/*
 
